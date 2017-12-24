@@ -1,0 +1,62 @@
+<div>
+
+<h1>Congratulations</h1>
+
+<!-- You have subscribed Product : 
+
+   	{{selectedProduct.productName}}
+    {{selectedProduct.description}}
+  	{{selectedProduct.minBalance}}
+  	
+ From Account : 
+ 
+    {{selectedAccount.accountId}}
+    {{selectedAccount.balance}}
+  	{{selectedAccount.accountType}} -->
+  	
+ 
+ 
+ You have subscribed to following Product :  	
+  	
+  	<table border="1">
+	     	<thead>
+	     		<tr>
+	     			<th>Product Name</th>
+	     			<th>Product Description</th>
+	     			<th>Minimum Balance</th>
+	     		</tr>
+	     	</thead>
+	     	<tbody>
+		    	<tr>
+				    <td>{{selectedProduct.productName}}</td>
+					<td>{{selectedProduct.description}}</td>
+					<td>{{selectedProduct.minBalance}}</td>       
+		  		</tr> 	
+	     	</tbody>
+	</table>	
+	
+	<br/>
+	<br/>
+	<br/>
+	
+	And From Account :	
+  	
+  	<table border="1">
+	     	<thead>
+	     		<tr>
+	     			<th>Account Id</th>	     		
+	     			<th>Account Type</th>
+	     			<th>Account Balance</th>
+	     		</tr>
+	     	</thead>
+	     	<tbody>
+		    	<tr>
+				    <td>{{selectedAccount.accountId}}</td>
+				    <td>{{selectedAccount.balance}}</td>
+				  	<td>{{selectedAccount.accountType}}</td>
+		  		</tr> 	
+	     	</tbody>
+	</table>
+		
+ </div> 	
+  	

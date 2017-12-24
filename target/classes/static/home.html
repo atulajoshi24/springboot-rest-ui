@@ -1,0 +1,74 @@
+<h1>Welcome To ANB Online Banking </h1>
+<div ng-show="authenticated">
+
+	<div class="alert alert-danger" ng-show=loginError>
+		There was a problem logging in. Please try again.
+	</div>
+	
+	<div class="alert alert-danger" ng-show=error>
+		{{errorMessage}}
+	</div>
+
+	<p>Welcome User {{userName}}  to Online Banking </p>
+	
+	We have following products available for you 
+	<br/>
+	<br/>
+     
+     <table border="1">
+     	<thead>
+     		<tr>
+     			<th>Product Name</th>
+     			<th>Product Description</th>
+     			<th>Minimum Balance</th>
+     			<th>Action</th>
+     		</tr>
+     	</thead>
+     	<tbody>
+	     	<tr ng-repeat="prod in products">
+			    <td>{{prod.productName}}</td>
+	         	<td>{{prod.description}}</td>
+	         	<td>{{prod.minBalance}}</td>
+	         	<td><button ng-click="subscribe(prod.productId)">Subscribe</button></td>
+		  	</tr> 	
+     	</tbody>
+     </table>
+     	
+     <br/>
+     <br/>
+     
+    You have following accounts linked . Please select an account to debit money from :
+    <select ng-model="selectedAccount" ng-options="acnt.accountId as acnt.accountType for acnt in accounts">   		
+	</select>
+	
+	 <br/>
+     <br/>
+	
+	<div ng-show="subscribedProducts.length > 0 ">
+		
+		Your have subscribed to following products currently. 
+		 <br/>
+		
+		<table border="1">
+	     	<thead>
+	     		<tr>
+	     			<th>Product Name</th>
+	     			<th>Product Description</th>
+	     			<th>Minimum Balance</th>
+	     		</tr>
+	     	</thead>
+	     	<tbody>
+		    	<tr ng-repeat="subscribedProds in subscribedProducts">
+				    <td>{{subscribedProds.productName}}</td>
+		         	<td>{{subscribedProds.description}}</td>
+		         	<td>{{subscribedProds.minBalance}}</td>         
+		  		</tr> 	
+	     	</tbody>
+	     </table>				
+	</div>
+		
+     	
+</div>
+<div ng-show="!authenticated">
+	<p>Login</p>
+</div>
