@@ -1,4 +1,4 @@
-angular.module('rolb').controller('subscriptionController', [$http,$scope,$rootScope,$location,function($http,$scope,$rootScope,$location) {
+angular.module('rolb').controller('subscriptionController', ['$http','$scope','$rootScope','$location',function($http,$scope,$rootScope,$location) {
 	
 	$http.get('http://localhost:8080/springbootrest/subscriptionInfo').success(function(data) {				    	
     	if (data) {					

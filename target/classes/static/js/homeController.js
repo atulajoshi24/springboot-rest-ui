@@ -1,4 +1,4 @@
-angular.module('rolb').controller('homeController',[$http,$scope,$rootScope,$location,function($http,$scope,$rootScope,$location) {
+angular.module('rolb').controller('homeController',['$http','$scope','$rootScope','$location',function($http,$scope,$rootScope,$location) {
 	var self = this;
 	/*$http.get('/resource/').then(function(response) {
 		self.greeting = response.data;
